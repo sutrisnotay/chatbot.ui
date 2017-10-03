@@ -1,0 +1,27 @@
+{
+    "host": "35.198.244.41",
+    "port": 22,
+    "username": "private",
+    "password": null,
+    "protocol": "sftp",
+    "agent": null,
+    "privateKeyPath": "D:/SSH/[Digital Ocean] Private.openssh",
+    "passphrase": null,
+    "passive": false,
+    "interactiveAuth": false,
+    "remotePath": "/home/private/app",
+    "uploadOnSave": true,
+    "syncMode": "full",
+    "watcher": {
+        "files": false,
+        "autoUpload": false,
+        "autoDelete": false
+    },
+    "ignore": [
+        "**/.vscode/**",
+        "**/.git/**",
+        "**/.DS_Store",
+        "**/template",
+        "**node_modules"
+    ]
+}

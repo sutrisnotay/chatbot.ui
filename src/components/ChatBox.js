@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 
 import ConversationItem from "./ConversationItem";
+import fire from './fire';
 
 class ChatBox extends Component{
     constructor(props){
@@ -9,7 +10,7 @@ class ChatBox extends Component{
         this.onBtnSendClick = this.onBtnSendClick.bind(this);
         this.onTxtMessageKeydown = this.onTxtMessageKeydown.bind(this);
         this.onTxtMessageChange = this.onTxtMessageChange.bind(this);
-        this.client = new window.ApiAi.ApiAiClient({accessToken: "ff265fdc6e5545cdb0440b7d1b800fd9 "})
+        this.client = new window.ApiAi.ApiAiClient({accessToken: "d729514246a74c30bbdbda58116d5c67"})
         this.state = {
             listConversation: [],
             message: ""
@@ -29,6 +30,7 @@ class ChatBox extends Component{
 
     onBtnSendClick(e){
         let message = this.state.message
+        fire.database().ref('messages').push( message );
         this.setState({listConversation: [...this.state.listConversation, {
             from: {type: "user", name: "The User"},
             message: message
